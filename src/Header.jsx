@@ -2,7 +2,7 @@ const Header = () => {
 
   return(
     <header>
-        <h1>Header</h1>
+        <h1 className="mt5 bg-dark text-info rounded">Header</h1>
     </header>
   )
 }
