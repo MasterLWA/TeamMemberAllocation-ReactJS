@@ -6,6 +6,7 @@ import maleProfile from './images/maleProfile.jpg'
 
 const Employee = () => {
 
+  const[selectedTeam,setTeam] = useState("TeamB");
   const[employee, setEmployees]  = useState([{id: 1,
     fullName: "Bob Jones",
     designation: "JavaScript Developer",
@@ -88,12 +89,21 @@ const Employee = () => {
     designation: "Graphic Designer",
     gender: "male",
     teamName: "TeamD"}])
+
+    function handleTeamSelectionChange(event){
+      console.log(event.target.value);
+      setTeam(event.target.value);
+    }
+
+   function hadnleEmployeeCardClick(){
+     
+   }
   
   return(
     <main className="Container">
         <div className="row justify-content-center mt-3 mb-3">
           <div>
-          <select className="form-select form-select-lg">
+          <select className="form-select form-select-lg" value={selectedTeam} onChange="handleTeamSelectionChange">
              <option>Team A</option>
              <option>Team B</option>
              <option>Team C</option>
@@ -104,7 +114,7 @@ const Employee = () => {
             <div className="card-collection">
             {
             employee.map((employee)=>(
-                <div id={employee.id} className="card m-2" style={{cursor:"pointer"}}>
+                <div id={employee.id} className="card m-2" style={{cursor:"pointer"}} onClick={hadnleEmployeeCardClick}>
                   {(employee.gender==='male')?<img src={maleProfile} className="card-img-top" />
                           :<img src={femaleProfile} className="card-img-top" />}
                  <div className="card-body">
