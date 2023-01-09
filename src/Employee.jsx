@@ -92,12 +92,21 @@ const Employee = () => {
   return(
     <main className="Container">
         <div className="row justify-content-center mt-3 mb-3">
+          <div>
+          <select className="form-select form-select-lg">
+             <option>Team A</option>
+             <option>Team B</option>
+             <option>Team C</option>
+             <option>Team D</option>
+          </select>
+          </div>
           <div className="col-8">
             <div className="card-collection">
             {
             employee.map((employee)=>(
                 <div id={employee.id} className="card m-2" style={{cursor:"pointer"}}>
-                <img src={femaleProfile} className="card-img-top" />
+                  {(employee.gender==='male')?<img src={maleProfile} className="card-img-top" />
+                          :<img src={femaleProfile} className="card-img-top" />}
                  <div className="card-body">
                     <h5 className="card-title">Full Name:{employee.fullName}</h5>
                     <p className="card-title">designation:{employee.designation}</p>
