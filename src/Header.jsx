@@ -1,13 +1,10 @@
-import React from 'react'
-import './App.css'
-import App from './App'
-
-
 const Header = () => {
 
   return(
     <header>
-      Hello!
+        <h1>Header</h1>
     </header>
   )
 }
+
+export default Header

@@ -1,11 +1,17 @@
 import './App.css'
 import Header from './Header'
+import Footer from './Footer'
+import Content from "./Content"
+
+
 
 
 export default function App() {
   return (
-    <main>
-      Hello World!
-    </main>
+      <div>
+      <Header/>
+      <Content/>
+      <Footer/>
+      </div>
   )
 }
